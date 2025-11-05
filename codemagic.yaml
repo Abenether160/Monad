@@ -1,75 +1,65 @@
 workflows:
   android-release-build:
     name: Android Release Build
-    max_build_duration: 60
-    instance_type: mac_mini_m1
     environment:
       vars:
-        ANDROID_KEYSTORE_BASE64: "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"
-        ANDROID_KEYSTORE_PASSWORD: "Slewtate@147"
-        ANDROID_KEY_ALIAS: "monad_key"
-        ANDROID_KEY_PASSWORD: "Slewtate@147"
-      android:
-        build_dir: android
+        KEYSTORE_BASE64: |
+          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
+        KEYSTORE_PASSWORD: Slewtate@147
+        KEY_ALIAS: MonadKey
+        KEY_PASSWORD: Slewtate@147
     scripts:
       - name: Decode keystore
         script: |
-          echo $ANDROID_KEYSTORE_BASE64 | base64 --decode > $CM_BUILD_DIR/android/app/monad-release-key.jks
-      - name: Build release APK
+          echo "$KEYSTORE_BASE64" | base64 --decode > android/app/monad.keystore
+      - name: Build release
         script: |
-          cd android
-          ./gradlew assembleRelease
-    artifacts:
-      - android/app/build/outputs/**/*.apk
-    publishing:
-      email:
-        recipients:
-          - your_email@example.com
+          flutter build apk --release
