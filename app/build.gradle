@@ -14,10 +14,25 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        release {
+            storeFile file("monad.keystore")       // path relative to android/app/
+            storePassword "Slewtate@147"          // keystore password
+            keyAlias "monad_key"                  // key alias
+            keyPassword "Slewtate@147"            // key password (usually same as storePassword)
+        }
+    }
 
     buildTypes {
-        release { minifyEnabled false }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
+
+    
 }
 
 dependencies {
